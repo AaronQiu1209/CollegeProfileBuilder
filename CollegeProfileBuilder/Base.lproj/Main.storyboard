@@ -57,6 +57,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="efS-Bi-wXu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="X4E-wx-yzE" id="Jq8-P4-yLl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
