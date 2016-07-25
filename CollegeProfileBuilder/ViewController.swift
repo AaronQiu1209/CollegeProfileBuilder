@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    var universities = ["Berkley", "Stanford", "NorthWestern", "UPenn"]
+    var universities = ["Berkley", "Stanford", "NorthWestern"]
 
     @IBOutlet weak var tableView: UITableView!
     
