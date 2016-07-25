@@ -55,7 +55,13 @@
                             <constraint firstItem="X4E-wx-yzE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uRc-tQ-ln6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="efS-Bi-wXu"/>
+                    <navigationItem key="navigationItem" id="efS-Bi-wXu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvF-DM-Bsj">
+                            <connections>
+                                <action selector="onTappedButtonAdd:" destination="BYZ-38-t0r" id="yud-tQ-hep"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="X4E-wx-yzE" id="Jq8-P4-yLl"/>
