@@ -12,20 +12,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    var universities = ["Berkley", "Stanford", "NorthWestern"]
+    var universities : [University] = []
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag == 0
+        universities.append(University(uniName: "Berkley", location: "Berkley, California", enrollment: 37581, image: UIImage(named: "berkley")!))
+        universities.append(University(uniName: "Stanford", location: "Stanford, California", enrollment: 16136, image: UIImage(named: "stanford")!))
+        universities.append(University(uniName: "NorthWestern", location: "Evanston, Illinois", enrollment: 20336, image: UIImage(named: "NorthWestern")!))
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return universities.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
-        cell.textLabel?.text = universities[indexPath.row]
+        cell.textLabel?.text = universities[indexPath.row].uniName
         return cell
     }
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -45,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) in
             let universityTextField = alert.textFields![0] as UITextField
-            self.universities.append(universityTextField.text!)
+            self.universities.append(University(uniName: universityTextField.text!))
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
