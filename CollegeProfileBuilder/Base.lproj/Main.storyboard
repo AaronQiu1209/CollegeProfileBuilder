@@ -181,17 +181,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je1-RB-kLn">
-                                <rect key="frame" x="315" y="363" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Blb-Kt-Bbv"/>
-                                    <constraint firstAttribute="height" constant="30" id="qp9-Dw-MBB"/>
-                                </constraints>
-                                <state key="normal" title="Open Website"/>
-                                <connections>
-                                    <action selector="openInSafariWithDoneButton:" destination="Na7-rR-67p" eventType="touchUpInside" id="ihV-ZR-YU1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-0h-qk7">
                                 <rect key="frame" x="339" y="475" width="48" height="30"/>
                                 <state key="normal" title="Library"/>
@@ -202,17 +191,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nh2-wG-7am">
                                 <rect key="frame" x="336" y="569" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraOnTappedButton:" destination="Na7-rR-67p" eventType="touchUpInside" id="7PN-aY-MqF"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="https://" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjo-Vb-RAB">
-                                <rect key="frame" x="46" y="366" width="56" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je1-RB-kLn">
+                                <rect key="frame" x="315" y="363" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="BCl-kX-aIx"/>
-                                    <constraint firstAttribute="height" constant="21" id="WSc-Ts-UAy"/>
+                                    <constraint firstAttribute="width" constant="97" id="Blb-Kt-Bbv"/>
+                                    <constraint firstAttribute="height" constant="30" id="qp9-Dw-MBB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="openInSafariWithDoneButton:" destination="Na7-rR-67p" eventType="touchUpInside" id="ihV-ZR-YU1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
