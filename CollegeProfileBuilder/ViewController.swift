@@ -72,6 +72,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             sender.tag = 0
         }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! detailViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        dvc.university = universities[index!]
+
+    }
 }
 
 
