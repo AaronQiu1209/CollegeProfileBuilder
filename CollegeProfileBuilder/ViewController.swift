@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -19,11 +19,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag == 0
-        universities.append(University(uniName: "Berkley", location: "Berkley, California", enrollment: 37581, image: UIImage(named: "berkeley.png")!))
-        universities.append(University(uniName: "Stanford", location: "Stanford, California", enrollment: 16136, image: UIImage(named: "stanford.png")!))
-        universities.append(University(uniName: "NorthWestern", location: "Evanston, Illinois", enrollment: 20336, image: UIImage(named: "NorthWestern.png")!))
+        universities.append(University(uniName: "Berkley", location: "Berkley, California", enrollment: 37581, urlString: "https://www.berkeley.edu", image: UIImage(named: "berkeley.png")!))
+        universities.append(University(uniName: "Stanford", location: "Stanford, California", enrollment: 16136, urlString: "https://www.stanford.edu", image: UIImage(named: "stanford.png")!))
+        universities.append(University(uniName: "NorthWestern", location: "Evanston, Illinois", enrollment: 20336,
+            urlString: "https://www.NorthWestern.edu", image: UIImage(named: "NorthWestern.png")!))
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(ableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return universities.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

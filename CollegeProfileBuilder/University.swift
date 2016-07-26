@@ -12,14 +12,16 @@ class University: NSObject {
     var uniName = ""
     var location = ""
     var enrollment = 0
+    var urlString = ""
     var image = UIImage(named: "Default")
 
 
-convenience init(uniName: String, location: String, enrollment: Int, image: UIImage){
+    convenience init(uniName: String, location: String, enrollment: Int, urlString: String, image: UIImage){
     self.init()
     self.uniName = uniName
     self.location = location
     self.enrollment = enrollment
+    self.urlString = urlString
     self.image = image
     
 }
