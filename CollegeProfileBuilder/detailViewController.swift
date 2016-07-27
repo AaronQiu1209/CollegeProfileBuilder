@@ -16,7 +16,7 @@ class detailViewController: UIViewController, SFSafariViewControllerDelegate, UI
     @IBOutlet weak var universityTextField: UITextField!
     
     @IBOutlet weak var enrollmentTextField: UITextField!
-    
+
     @IBOutlet weak var locationTextField: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
