@@ -260,7 +260,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="CM8-yT-B8M" id="zm1-l2-mXr"/>
+                                    <outlet property="delegate" destination="CM8-yT-B8M" id="QJQ-JH-nFw"/>
                                 </connections>
                             </textField>
                         </subviews>

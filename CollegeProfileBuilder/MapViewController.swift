@@ -8,11 +8,10 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
-    let locationManager = CLLocationManager()
     var collegeLocation = ""
     
     @IBOutlet weak var mapAddressTextField: UITextField!
@@ -34,46 +33,48 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFiel
         super.viewDidLoad()
         mapAddressTextField.text = collegeLocation
         
-        func textFieldShouldReturn(textField: UITextField) -> Bool {
-            let geoCoder = CLGeocoder()
-            geoCoder.geocodeAddressString(mapAddressTextField.text!, completionHandler: { (placemarks, error) in
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let geoCoder = CLGeocoder()
+        
+        geoCoder.geocodeAddressString(mapAddressTextField.text!) { (placemarks, error) in
+            
+            if error != nil {
+                print(error)
+            }
+            else {
+                let actionController = UIAlertController(title: "Select an address", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
-                if error != nil {
-                    print(error)
-                }
-                else {
+                if placemarks!.count == 1{
                     let placemark = placemarks!.first as CLPlacemark!
                     let center = placemark.location!.coordinate
                     let span = MKCoordinateSpanMake(0.1, 0.1)
-                    self.displayMap(center, span: span, pinTitle: textField.text!)
-                    
-                    let actionController = UIAlertController(title: "Select an address", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-                    
-                    if placemarks!.count > 1 {
+                    self.displayMap(center, span: span, pinTitle: self.mapAddressTextField.text!)
+                }else{
+                    for placemark in placemarks! {
                         
-                        for i in 0..<placemarks!.count {
-                            
-                            if i <= 9 {
-                                break
-                            }else
-                            {
-                                let addressCellAction = UIAlertAction(title: "\(placemarks![i])", style: .Default) { (action) in
-                                }
-                                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-                                
-                                actionController.addAction(addressCellAction)
-                                actionController.addAction(cancelAction)
-                                
-                                self.presentViewController(actionController, animated: true, completion: nil)
-                            }
-                            
+                        let addressCellAction = UIAlertAction(title: "\(placemark.name!)",
+                                                              style: .Default) { (action) in
+                                                                self.mapAddressTextField.text = "\(placemark.name!)"
+                                                                let placemark = placemarks!.first as CLPlacemark!
+                                                                let center = placemark.location!.coordinate
+                                                                let span = MKCoordinateSpanMake(0.1, 0.1)
+                                                                self.displayMap(center, span: span, pinTitle: self.mapAddressTextField.text!)
+                                                                
                         }
-                    }
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                        
+                        actionController.addAction(addressCellAction)
+                        actionController.addAction(cancelAction)
+                        
+                        self.presentViewController(actionController, animated: true, completion: nil)
+  
                 }
-            })
-            self.mapAddressTextField.resignFirstResponder()
-            return true
-            
+                
+                                       }
+            }
         }
+        self.mapAddressTextField.resignFirstResponder()
+        return true
     }
 }

@@ -86,7 +86,6 @@
 				93BB60FF1D46954E00E4D797 /* CollegeProfileBuilder */,
 				93BB61141D46954F00E4D797 /* CollegeProfileBuilderTests */,
 				93BB611F1D46954F00E4D797 /* CollegeProfileBuilderUITests */,
-				93BB60FE1D46954E00E4D797 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +97,7 @@
 				93BB611C1D46954F00E4D797 /* CollegeProfileBuilderUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		93BB60FF1D46954E00E4D797 /* CollegeProfileBuilder */ = {
@@ -128,6 +128,7 @@
 		93BB611F1D46954F00E4D797 /* CollegeProfileBuilderUITests */ = {
 			isa = PBXGroup;
 			children = (
+				93BB60FE1D46954E00E4D797 /* Products */,
 				93BB61201D46954F00E4D797 /* CollegeProfileBuilderUITests.swift */,
 				93BB61221D46954F00E4D797 /* Info.plist */,
 			);
