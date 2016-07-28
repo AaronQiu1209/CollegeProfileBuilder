@@ -19,9 +19,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag == 0
-        universities.append(University(uniName: "Berkley", location: "Berkley, California", enrollment: 37581, urlString: "https://www.berkeley.edu", image: UIImage(named: "berkeley.png")!))
-        universities.append(University(uniName: "Stanford", location: "Stanford, California", enrollment: 16136, urlString: "https://www.stanford.edu", image: UIImage(named: "stanford.png")!))
-        universities.append(University(uniName: "NorthWestern", location: "Evanston, Illinois", enrollment: 20336,
+        universities.append(University(uniName: "UC Berkley", location: "Berkley, California", enrollment: 37581, urlString: "https://www.berkeley.edu", image: UIImage(named: "berkeley.png")!))
+        universities.append(University(uniName: "Stanford University", location: "Stanford, California", enrollment: 16136, urlString: "https://www.stanford.edu", image: UIImage(named: "stanford.png")!))
+        universities.append(University(uniName: "NorthWestern University", location: "Evanston, Illinois", enrollment: 20336,
             urlString: "https://www.NorthWestern.edu", image: UIImage(named: "NorthWestern.png")!))
     }
     func tableView(ableView: UITableView, numberOfRowsInSection section: Int) -> Int {
